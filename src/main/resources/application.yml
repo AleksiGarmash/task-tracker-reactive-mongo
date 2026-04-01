@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: tasktracker
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/tasktracker
+      auto-index-creation: true
+#  webflux:
+#    base-path: /api
+
+logging:
+  level:
+    com.example.tasktracker: DEBUG
+    org.springframework.data.mongodb: DEBUG
+    org.springframework.security: DEBUG
+
+server:
+  port: 8081

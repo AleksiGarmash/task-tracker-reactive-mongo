@@ -1,0 +1,9 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/tasktracker-test
+  security:
+    user:
+      name: manager
+      password: password
+      roles: MANAGER,USER

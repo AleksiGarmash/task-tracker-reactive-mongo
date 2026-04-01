@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  mongodb:
+    image: mongo:6.0
+    container_name: tasktracker-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - tasktracker-net
+
+  app:
+    build: .
+    container_name: tasktracker-app
+    ports:
+      - "8081:8081"
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://mongodb:27017/tasktracker
+    depends_on:
+      - mongodb
+    networks:
+      - tasktracker-net
+
+volumes:
+  mongodb_data:
+
+networks:
+  tasktracker-net:
+    driver: bridge
