@@ -5,8 +5,6 @@ spring:
     mongodb:
       uri: mongodb://localhost:27017/tasktracker
       auto-index-creation: true
-#  webflux:
-#    base-path: /api
 
 logging:
   level:
